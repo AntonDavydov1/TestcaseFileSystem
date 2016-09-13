@@ -1,0 +1,37 @@
+﻿<div ng-controller="ContentController" class="row">
+
+    <h5 class="error">{{error}}</h5>
+    <br />
+
+    <table class="tbl-info">
+        <tr class="tbl-info-tr">
+            <th class="tbl-info-th">Less 10Mb</th>
+            <th class="tbl-info-th">10Mb-50Mb</th>
+            <th class="tbl-info-th">More 100 Mb</th>
+        </tr>
+        <tr class="tbl-info-tr">
+            <td class ="tbl-info-td">{{s_0_10}}</td>
+            <td class ="tbl-info-td">{{s_10_50}}</td>
+            <td class ="tbl-info-td">{{s_100plus}}</td>
+        </tr>
+    </table>
+
+    <br /><br />
+
+    <h7><b>Current path:</b> {{curPath}}</h7>
+
+    <br /><br />
+
+    <a href="#/list/{{parentDir}}">...</a>
+
+    <table>
+        <tr ng-repeat="folder in folders">
+            <td><a href="/#/list/{{folder.fullpath}}">{{folder.label}}</a></td>
+    </table>
+
+    <table>
+        <tr ng-repeat="file in files">
+            <td><a href="{{file.fullpath}}" target="_blank">{{file.label}}</a></td>
+    </table>
+
+</div>
